@@ -65,10 +65,10 @@ public class ExtraCompostableModFeature extends ModFeature {
                               PermittedFloatArgumentType::getFloat);
     }
     
-    private ArgumentType<Item> getItemArgument(MapSubCommand subCommand) {
+    private ArgumentType<Item> getItemArgument(SubCommand subCommand) {
         return switch (subCommand) {
             case GET, REMOVE -> ItemArgumentType.permitted(compostables.keySet());
-            case SET -> ItemArgumentType.all();
+            case ADD_SET -> ItemArgumentType.all();
         };
     }
     

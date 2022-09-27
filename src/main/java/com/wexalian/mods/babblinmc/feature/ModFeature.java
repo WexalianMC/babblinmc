@@ -86,9 +86,9 @@ public abstract class ModFeature {
         }));
     }
     
-    protected final <T> void registerListSubCommand(LiteralArgumentBuilder<ServerCommandSource> root, String name, ListConfigProperty<T> property, ArgumentType<T> type, BiFunction<CommandContext<ServerCommandSource>, String, T> valueFunction) {
-        var valueArgument1 = argument(name + "Value1", type);
-        var valueArgument2 = argument(name + "Value2", type);
+    protected final <T> void registerListSubCommand(LiteralArgumentBuilder<ServerCommandSource> root, String name, ListConfigProperty<T> property, Function<SubCommand, ArgumentType<T>> typeFunction, BiFunction<CommandContext<ServerCommandSource>, String, T> valueFunction) {
+        var valueArgumentAdd = argument(name + "ValueAdd", typeFunction.apply(SubCommand.ADD_SET));
+        var valueArgumentRemove = argument(name + "ValueRemove", typeFunction.apply(SubCommand.REMOVE));
         
         root.then(literal(name).then(literal("get").executes(context -> {
             String text = StringUtil.format("List {}/{} contains: ", id, name);
@@ -98,8 +98,8 @@ public abstract class ModFeature {
                 context.getSource().sendFeedback(Text.of(valueText), false);
             }
             return 0;
-        })).then(literal("add").then(valueArgument1.executes(context -> {
-            T value = valueFunction.apply(context, name + "Value1");
+        })).then(literal("add").then(valueArgumentAdd.executes(context -> {
+            T value = valueFunction.apply(context, name + "ValueAdd");
             if (value != null) {
                 property.add(value);
                 String text = StringUtil.format("Added {} to {}/{}", value, id, name);
@@ -107,8 +107,8 @@ public abstract class ModFeature {
                 return 1;
             }
             return 0;
-        }))).then(literal("remove").then(valueArgument2.executes(context -> {
-            T value = valueFunction.apply(context, name + "Value2");
+        }))).then(literal("remove").then(valueArgumentRemove.executes(context -> {
+            T value = valueFunction.apply(context, name + "ValueRemove");
             if (value != null) {
                 property.remove(value);
                 String text = StringUtil.format("Removed {} from {}/{}", value, id, name);
@@ -124,13 +124,13 @@ public abstract class ModFeature {
         })));
     }
     
-    protected final <K, V> void registerMapSubCommand(LiteralArgumentBuilder<ServerCommandSource> root, String name, MapConfigProperty<K, V> property, Function<MapSubCommand, ArgumentType<K>> keyTypeFunction, BiFunction<CommandContext<ServerCommandSource>, String, K> keyFunction, ArgumentType<V> valueType, BiFunction<CommandContext<ServerCommandSource>, String, V> valueFunction) {
-        var keyArgument1 = argument(name + "KeyGet", keyTypeFunction.apply(MapSubCommand.GET));
-        var keyArgument2 = argument(name + "KeySet", keyTypeFunction.apply(MapSubCommand.SET));
-        var keyArgument3 = argument(name + "KeyRemove", keyTypeFunction.apply(MapSubCommand.REMOVE));
+    protected final <K, V> void registerMapSubCommand(LiteralArgumentBuilder<ServerCommandSource> root, String name, MapConfigProperty<K, V> property, Function<SubCommand, ArgumentType<K>> keyTypeFunction, BiFunction<CommandContext<ServerCommandSource>, String, K> keyFunction, ArgumentType<V> valueType, BiFunction<CommandContext<ServerCommandSource>, String, V> valueFunction) {
+        var keyArgumentGet = argument(name + "KeyGet", keyTypeFunction.apply(SubCommand.GET));
+        var keyArgumentSet = argument(name + "KeySet", keyTypeFunction.apply(SubCommand.ADD_SET));
+        var keyArgumentRemove = argument(name + "KeyRemove", keyTypeFunction.apply(SubCommand.REMOVE));
         var valueArgument = argument(name + "Value", valueType);
         
-        root.then(literal(name).then(literal("get").then(keyArgument1.executes(context -> {
+        root.then(literal(name).then(literal("get").then(keyArgumentGet.executes(context -> {
             K key = keyFunction.apply(context, name + "KeyGet");
             if (key != null) {
                 V value = property.get(key);
@@ -149,7 +149,7 @@ public abstract class ModFeature {
                 context.getSource().sendFeedback(Text.of(text2), false);
             }
             return 0;
-        })).then(literal("set").then(keyArgument2.then(valueArgument.executes(context -> {
+        })).then(literal("set").then(keyArgumentSet.then(valueArgument.executes(context -> {
             K key = keyFunction.apply(context, name + "KeySet");
             V value = valueFunction.apply(context, name + "Value");
             
@@ -171,7 +171,7 @@ public abstract class ModFeature {
                 }
             }
             return -1;
-        })))).then(literal("remove").then(keyArgument3.executes(context -> {
+        })))).then(literal("remove").then(keyArgumentRemove.executes(context -> {
             K key = keyFunction.apply(context, name + "KeyRemove");
             if (key != null) {
                 V value = property.remove(key);
@@ -192,9 +192,9 @@ public abstract class ModFeature {
         })));
     }
     
-    public enum MapSubCommand {
+    public enum SubCommand {
         GET,
-        SET,
+        ADD_SET,
         REMOVE;
     }
 }
