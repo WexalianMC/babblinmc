@@ -1,0 +1,20 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.wexalian.mods.babblinmc.mixins",
+    "compatibilityLevel": "JAVA_16",
+    "mixins": [
+        "block.DispenserBlockMixin",
+        "block.DoorBlockMixin",
+        "item.ShearsItemMixin",
+        "recipe.ShapedRecipeMixin",
+        "recipe.ShapedRecipeJsonFactoryMixin"
+    ],
+    "client": [
+    ],
+    "server": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

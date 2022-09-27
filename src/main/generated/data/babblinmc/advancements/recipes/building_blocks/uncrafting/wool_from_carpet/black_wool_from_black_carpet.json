@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "babblinmc:uncrafting/wool_from_carpet/black_wool_from_black_carpet"
+    ]
+  },
+  "criteria": {
+    "has_black_carpet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:black_carpet"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "babblinmc:uncrafting/wool_from_carpet/black_wool_from_black_carpet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_black_carpet",
+      "has_the_recipe"
+    ]
+  ]
+}

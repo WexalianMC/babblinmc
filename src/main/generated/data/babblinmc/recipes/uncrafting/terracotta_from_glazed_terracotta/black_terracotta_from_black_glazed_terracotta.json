@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "uncrafting_terracotta",
+  "ingredients": [
+    {
+      "item": "minecraft:black_glazed_terracotta"
+    }
+  ],
+  "result": {
+    "item": "minecraft:black_terracotta"
+  }
+}

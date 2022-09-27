@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "babblinmc",
+    "version": "${version}",
+    "name": "BabblinMC",
+    "description": "",
+    "authors": [ "Wexalian" ],
+    "contact": { },
+    "license": "All-Rights-Reserved",
+    "icon": "",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.wexalian.mods.babblinmc.BabblinMC"
+        ],
+        "client": [
+            "com.wexalian.mods.babblinmc.BabblinMCClient"
+        ],
+        "fabric-datagen": [
+            "com.wexalian.mods.babblinmc.data.BabblinMCDataGen"
+        ]
+    },
+    "mixins": [
+        "babblinmc.mixins.json"
+    ],
+    "accessWidener": "babblinmc.accesswidener",
+    "depends": {
+        "fabricloader": ">=0.14.9",
+        "fabric": "*",
+        "minecraft": "1.18.2"
+    }
+}

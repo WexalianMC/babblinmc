@@ -1,0 +1,19 @@
+{
+  "itemGroup.babblinmc": "BabblinMC",
+  
+  "block.babblinmc.pump": "Pump",
+  "block.babblinmc.pump.state": "%d mB of %s - %d / %d E",
+  "block.babblinmc.pump.state.disabled": "Pump is disabled",
+  "block.babblinmc.pump.state_empty": "Empty - %d / %d E",
+  "block.babblinmc.pump.state.energy": "Not enough energy",
+  "block.babblinmc.pump.state.redstone": "Not working due to redstone signal",
+  "block.babblinmc.pump.state.working": "Scanning at %d, %d, %d (range: %d of %d)",
+  "block.babblinmc.pump.state.full": "Internal tank is full",
+  "block.babblinmc.pump.state.error": "Error",
+  "block.babblinmc.pump.state.done": "Done",
+  
+  "block.babblinmc.ender_tank" : "Ender Tank",
+  "block.babblinmc.ender_tank.disabled": "Ender tank is disabled",
+  "block.babblinmc.ender_tank.empty": "Empty",
+  "block.babblinmc.ender_tank.fluid": "Fluid: %s, %d mB"
+}

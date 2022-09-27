@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OPO",
+    "LDW",
+    "OPO"
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "P": {
+      "item": "minecraft:iron_pickaxe"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "babblinmc:pump"
+  }
+}

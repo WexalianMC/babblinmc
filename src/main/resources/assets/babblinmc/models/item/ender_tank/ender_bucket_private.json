@@ -1,0 +1,11 @@
+{
+    "parent": "babblinmc:item/ender_tank/ender_bucket",
+    "textures": {
+        "layer0": "babblinmc:item/ender_tank/bucket_base",
+        "layer1": "babblinmc:item/ender_tank/bucket_band1",
+        "layer2": "babblinmc:item/ender_tank/bucket_band2",
+        "layer3": "babblinmc:item/ender_tank/bucket_band3",
+        "layer4": "babblinmc:item/ender_tank/bucket_private"
+    },
+    "overrides": []
+}

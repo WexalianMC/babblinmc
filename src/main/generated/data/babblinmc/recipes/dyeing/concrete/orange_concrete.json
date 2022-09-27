@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "redyeing_concrete",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "babblinmc:concrete"
+    },
+    "X": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "result": {
+    "item": "minecraft:orange_concrete",
+    "count": 8
+  }
+}

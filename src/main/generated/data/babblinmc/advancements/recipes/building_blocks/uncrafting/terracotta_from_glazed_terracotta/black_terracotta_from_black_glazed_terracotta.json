@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "babblinmc:uncrafting/terracotta_from_glazed_terracotta/black_terracotta_from_black_glazed_terracotta"
+    ]
+  },
+  "criteria": {
+    "has_black_glazed_terracotta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:black_glazed_terracotta"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "babblinmc:uncrafting/terracotta_from_glazed_terracotta/black_terracotta_from_black_glazed_terracotta"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_black_glazed_terracotta",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "babblinmc:block/ender_tank/ender_tank",
+    "textures": {
+        "particle": "babblinmc:block/ender_tank/space",
+        "stars": "babblinmc:block/ender_tank/space",
+        "band": "babblinmc:block/ender_tank/bands",
+        "type": "babblinmc:block/ender_tank/type_public",
+        "top": "babblinmc:block/ender_tank/top_powered",
+        "bottom": "babblinmc:block/ender_tank/top_powered",
+        "side": "babblinmc:block/ender_tank/side_powered_output"
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "variants": {
+        "facing=down,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public" },
+        "facing=up,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public", "x": 180 },
+        "facing=north,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public", "x": 90 },
+        "facing=east,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public",  "x": 90, "y": 90 },
+
+        "facing=down,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered" },
+        "facing=up,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered", "x": 180 },
+        "facing=north,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered", "x": 90 },
+        "facing=east,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=public,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered",  "x": 90, "y": 90 },
+
+        "facing=down,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private" },
+        "facing=up,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private", "x": 180 },
+        "facing=north,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private", "x": 90 },
+        "facing=east,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private",  "x": 90, "y": 90 },
+
+        "facing=down,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered" },
+        "facing=up,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered", "x": 180 },
+        "facing=north,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered", "x": 90 },
+        "facing=east,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=private,flow=none": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input" },
+        "facing=up,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input", "x": 180 },
+        "facing=north,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input", "x": 90 },
+        "facing=east,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_input",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input" },
+        "facing=up,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input", "x": 180 },
+        "facing=north,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input", "x": 90 },
+        "facing=east,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=public,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_input",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input" },
+        "facing=up,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input", "x": 180 },
+        "facing=north,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input", "x": 90 },
+        "facing=east,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_input",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input" },
+        "facing=up,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input", "x": 180 },
+        "facing=north,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input", "x": 90 },
+        "facing=east,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=private,flow=input": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_input",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output" },
+        "facing=up,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output", "x": 180 },
+        "facing=north,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output", "x": 90 },
+        "facing=east,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_output",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output" },
+        "facing=up,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output", "x": 180 },
+        "facing=north,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output", "x": 90 },
+        "facing=east,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=public,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_public_powered_output",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output" },
+        "facing=up,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output", "x": 180 },
+        "facing=north,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output", "x": 90, "y": 180 },
+        "facing=south,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output", "x": 90 },
+        "facing=east,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output", "x": 90, "y": 270 },
+        "facing=west,powered=false,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_output",  "x": 90, "y": 90 },
+    
+        "facing=down,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output" },
+        "facing=up,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output", "x": 180 },
+        "facing=north,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output", "x": 90, "y": 180 },
+        "facing=south,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output", "x": 90 },
+        "facing=east,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output", "x": 90, "y": 270 },
+        "facing=west,powered=true,variant=private,flow=output": { "model": "babblinmc:block/ender_tank/ender_tank_private_powered_output",  "x": 90, "y": 90 }
+    }
+}

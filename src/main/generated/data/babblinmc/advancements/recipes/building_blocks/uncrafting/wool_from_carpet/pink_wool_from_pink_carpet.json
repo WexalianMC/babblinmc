@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "babblinmc:uncrafting/wool_from_carpet/pink_wool_from_pink_carpet"
+    ]
+  },
+  "criteria": {
+    "has_pink_carpet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:pink_carpet"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "babblinmc:uncrafting/wool_from_carpet/pink_wool_from_pink_carpet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_carpet",
+      "has_the_recipe"
+    ]
+  ]
+}

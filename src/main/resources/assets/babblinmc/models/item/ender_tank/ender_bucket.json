@@ -1,0 +1,40 @@
+{
+    "parent": "item/ender_tank/generated",
+    "textures": {
+        "layer0": "babblinmc:item/ender_tank/bucket_base",
+        "layer1": "babblinmc:item/ender_tank/bucket_band1",
+        "layer2": "babblinmc:item/ender_tank/bucket_band2",
+        "layer3": "babblinmc:item/ender_tank/bucket_band3"
+    },
+    "display": {
+        "gui": {
+            "scale":[ 0.8, 0.8, 0.8]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 2, 0],
+            "scale":[ 0.4, 0.4, 0.4 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 13, 7],
+            "scale":[ 0.8, 0.8, 0.8]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 1 ],
+            "scale": [ 0.44, 0.44, 0.44 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, -90, 25 ],
+            "translation": [ 1.13, 3.2, 1.13],
+            "scale": [ 0.544, 0.544, 0.544 ]
+        }
+    },
+    "overrides": [
+        {
+            "predicate": { "type": 1 },
+            "model": "babblinmc:item/ender_tank/ender_bucket_private"
+        }
+    ]
+}

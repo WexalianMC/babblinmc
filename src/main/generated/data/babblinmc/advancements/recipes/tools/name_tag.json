@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "babblinmc:name_tag"
+    ]
+  },
+  "criteria": {
+    "has_name_tag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:name_tag"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "babblinmc:name_tag"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_name_tag",
+      "has_the_recipe"
+    ]
+  ]
+}

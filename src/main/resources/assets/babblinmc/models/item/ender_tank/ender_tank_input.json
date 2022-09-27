@@ -1,0 +1,12 @@
+{
+    "parent": "babblinmc:item/ender_tank",
+    "textures": {
+        "stars": "babblinmc:block/ender_tank/space",
+        "band": "babblinmc:block/ender_tank/bands",
+        "top": "babblinmc:block/ender_tank/top_normal",
+        "bottom": "babblinmc:block/ender_tank/top_normal",
+        "side": "babblinmc:block/ender_tank/side_normal_input",
+        "type": "babblinmc:block/ender_tank/type_public"
+    },
+    "overrides": []
+}

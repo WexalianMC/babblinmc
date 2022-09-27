@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "functions": [
+                {
+                  "function": "minecraft:copy_nbt",
+                  "source": "block_entity",
+                  "ops": [
+                    {
+                      "source": "code",
+                      "target": "BlockEntityTag.code",
+                      "op": "replace"
+                    },
+                    {
+                      "source": "owner",
+                      "target": "BlockEntityTag.owner",
+                      "op": "replace"
+                    }
+                  ]
+                },
+                {
+                  "function": "minecraft:copy_state",
+                  "block": "babblinmc:ender_tank",
+                  "properties": [
+                    "flow",
+                    "variant"
+                  ]
+                }
+              ],
+              "name": "babblinmc:ender_tank"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "babblinmc:ender_tank"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

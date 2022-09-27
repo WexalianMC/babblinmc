@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "redyeing_concrete",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "babblinmc:concrete"
+    },
+    "X": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "minecraft:red_concrete",
+    "count": 8
+  }
+}

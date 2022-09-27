@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "uncrafting_carpet",
+  "pattern": [
+    "XX",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:purple_carpet"
+    }
+  },
+  "result": {
+    "item": "minecraft:purple_wool",
+    "count": 2
+  }
+}

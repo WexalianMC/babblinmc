@@ -1,0 +1,43 @@
+{
+  "parent": "babblinmc:block/ender_tank/ender_tank_inv",
+  "textures": {
+    "stars": "babblinmc:block/ender_tank/space",
+    "band": "babblinmc:block/ender_tank/bands",
+    "top": "babblinmc:block/ender_tank/top_normal",
+    "bottom": "babblinmc:block/ender_tank/top_normal",
+    "side": "babblinmc:block/ender_tank/side_normal_none",
+    "type": "babblinmc:block/ender_tank/type_public"
+  },
+  "overrides": [ {
+      "predicate": {
+        "variant": 0.0,
+        "flow": 0.5
+      },
+      "model": "babblinmc:item/ender_tank/ender_tank_input"
+    }, {
+      "predicate": {
+        "variant": 0.0,
+        "flow": 1.0
+      },
+      "model": "babblinmc:item/ender_tank/ender_tank_output"
+    }, {
+      "predicate": {
+        "variant": 1.0,
+        "flow": 0.0
+      },
+      "model": "babblinmc:item/ender_tank/ender_tank_private"
+    }, {
+      "predicate": {
+        "variant": 1.0,
+        "flow": 0.5
+      },
+      "model": "babblinmc:item/ender_tank/ender_tank_private_input"
+    }, {
+      "predicate": {
+        "variant": 1.0,
+        "flow": 1.0
+      },
+      "model": "babblinmc:item/ender_tank/ender_tank_private_output"
+    }
+  ]
+}
