@@ -38,7 +38,7 @@ dependencies {
 //    modRuntimeOnly (name: "indium")
 
     implementation "com.wexalian.nullability:nullability:0.0.2"
-    implementation "com.wexalian.common:common:0.0.9"
+    implementation "com.wexalian.common:common:0.0.10"
     implementation 'com.wexalian.config:config:0.0.15'
 
     implementation 'org.joml:joml:1.10.2'
