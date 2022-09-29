@@ -29,20 +29,20 @@ public class ExtraCompostableModFeature extends ModFeature {
     @Override
     public void init() {
         if (isEnabled()) {
-            compostables.forEach(this::addCompostableitem);
+            compostables.forEach(this::addCompostableItem);
         }
         
         enabled.addListener(((oldV, newV) -> {
-            if (newV) compostables.forEach(this::addCompostableitem);
+            if (newV) compostables.forEach(this::addCompostableItem);
             else compostables.forEach(this::removeCompostableItem);
         }));
         compostables.addListener((removed, added) -> {
             removed.forEach(this::removeCompostableItem);
-            added.forEach(this::addCompostableitem);
+            added.forEach(this::addCompostableItem);
         });
     }
     
-    private void addCompostableitem(Item item, float amount) {
+    private void addCompostableItem(Item item, float amount) {
         CompostingChanceRegistry.INSTANCE.add(item, amount);
     }
     
@@ -59,23 +59,23 @@ public class ExtraCompostableModFeature extends ModFeature {
         registerMapSubCommand(root,
                               "compostables",
                               compostables,
-                              this::getItemArgument,
+                              this::getItemArgumentType,
                               ItemArgumentType::getItem,
                               PermittedFloatArgumentType.permitted(0.3f, 0.5f, 0.65f, 0.85f, 1.0f),
                               PermittedFloatArgumentType::getFloat);
     }
     
-    private ArgumentType<Item> getItemArgument(SubCommand subCommand) {
+    private ArgumentType<Item> getItemArgumentType(SubCommand subCommand) {
         return switch (subCommand) {
             case GET, REMOVE -> ItemArgumentType.permitted(compostables.keySet());
-            case ADD_SET -> ItemArgumentType.all();
+            case ADD -> ItemArgumentType.all();
         };
     }
     
     private int resetCompostables(CommandContext<ServerCommandSource> context) {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.clear();
         ComposterBlock.registerDefaultCompostableItems();
-        compostables.forEach(this::addCompostableitem);
+        compostables.forEach(this::addCompostableItem);
         return 0;
     }
 }

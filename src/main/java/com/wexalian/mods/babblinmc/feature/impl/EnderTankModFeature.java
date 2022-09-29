@@ -1,6 +1,7 @@
 package com.wexalian.mods.babblinmc.feature.impl;
 
 import com.google.gson.reflect.TypeToken;
+import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.wexalian.config.ConfigHandler;
 import com.wexalian.config.ConfigProperty;
@@ -30,7 +31,14 @@ public class EnderTankModFeature extends ModFeature {
     public void registerSubCommands(LiteralArgumentBuilder<ServerCommandSource> root) {
         super.registerSubCommands(root);
         registerIntSubCommand(root, "size", size);
-        registerListSubCommand(root, "private_upgrades", privateUpgrades, ItemArgumentType.all(), ItemArgumentType::getItem);
+        registerListSubCommand(root, "private_upgrades", privateUpgrades, this::getItemArgumentType, ItemArgumentType::getItem);
+    }
+    
+    private ArgumentType<Item> getItemArgumentType(SubCommand subCommand) {
+        return switch (subCommand) {
+            case GET, REMOVE -> ItemArgumentType.permitted(privateUpgrades);
+            case ADD -> ItemArgumentType.all();
+        };
     }
     
     public int getSize() {
@@ -38,6 +46,6 @@ public class EnderTankModFeature extends ModFeature {
     }
     
     public Collection<Item> getPrivateUpgrades() {
-        return privateUpgrades.get();
+        return privateUpgrades;
     }
 }
