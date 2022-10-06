@@ -31,8 +31,8 @@
                   "function": "minecraft:copy_state",
                   "block": "babblinmc:ender_tank",
                   "properties": [
-                    "flow",
-                    "variant"
+                    "variant",
+                    "flow"
                   ]
                 }
               ],
