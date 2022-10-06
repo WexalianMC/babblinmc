@@ -5,6 +5,8 @@ import com.wexalian.config.ConfigHandler;
 import com.wexalian.mods.babblinmc.BabblinMC;
 import com.wexalian.mods.babblinmc.config.ModConfig;
 import com.wexalian.mods.babblinmc.feature.impl.*;
+import com.wexalian.mods.babblinmc.feature.impl.block.EnderTankModFeature;
+import com.wexalian.mods.babblinmc.feature.impl.block.PumpModFeature;
 import com.wexalian.nullability.annotations.Nonnull;
 
 import java.util.*;
@@ -23,6 +25,8 @@ public final class ModFeatures {
     public static final ExtraCompostableModFeature EXTRA_COMPOSTABLES = ModFeatures.register("extra_compostables", ExtraCompostableModFeature::new);
     
     public static final ShearBambooModFeature SHEAR_BAMBOO = ModFeatures.register("shear_bamboo", ShearBambooModFeature::new);
+    public static final PassableLeavesModFeature PASSABLE_LEAVES = ModFeatures.register("passable_leaves", PassableLeavesModFeature::new);
+    
     
     
     public static void setup() {}

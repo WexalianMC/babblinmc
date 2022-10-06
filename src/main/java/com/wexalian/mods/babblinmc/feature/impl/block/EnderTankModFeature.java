@@ -1,4 +1,4 @@
-package com.wexalian.mods.babblinmc.feature.impl;
+package com.wexalian.mods.babblinmc.feature.impl.block;
 
 import com.google.gson.reflect.TypeToken;
 import com.mojang.brigadier.arguments.ArgumentType;

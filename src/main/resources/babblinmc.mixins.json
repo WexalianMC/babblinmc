@@ -6,6 +6,9 @@
     "mixins": [
         "block.DispenserBlockMixin",
         "block.DoorBlockMixin",
+        "block.LeavesBlockMixin",
+        "block.SnowBlockMixin",
+        "block.VineBlockMixin",
         "item.ShearsItemMixin",
         "recipe.ShapedRecipeMixin",
         "recipe.ShapedRecipeJsonFactoryMixin"

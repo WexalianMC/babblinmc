@@ -1,4 +1,4 @@
-package com.wexalian.mods.babblinmc.feature.impl;
+package com.wexalian.mods.babblinmc.feature.impl.block;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.wexalian.config.ConfigHandler;
