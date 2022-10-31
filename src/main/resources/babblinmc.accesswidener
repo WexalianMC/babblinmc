@@ -1,9 +1,12 @@
 accessWidener	v1	named
 
-accessible  field   net/minecraft/block/AbstractBlock   material    Lnet/minecraft/block/Material;
+accessible  field   net/minecraft/block/AbstractBlock               material                Lnet/minecraft/block/Material;
 
-accessible	method	net/minecraft/block/DoorBlock   getOpenSoundEventId     ()I
-accessible	method	net/minecraft/block/DoorBlock   getCloseSoundEventId	()I
+accessible	method	net/minecraft/block/DoorBlock                   getOpenSoundEventId     ()I
+accessible	method	net/minecraft/block/DoorBlock                   getCloseSoundEventId	()I
 
-accessible  method  net/minecraft/block/BambooBlock updateLeaves            (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;I)V
-accessible  method  net/minecraft/block/BambooBlock countBambooBelow        (Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)I
+accessible  method  net/minecraft/block/BambooBlock                 updateLeaves            (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;I)V
+accessible  method  net/minecraft/block/BambooBlock                 countBambooBelow        (Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)I
+
+accessible  field   net/minecraft/block/entity/BeaconBlockEntity    EFFECTS                 Ljava/util/Set;
+mutable     field   net/minecraft/block/entity/BeaconBlockEntity    EFFECTS                 Ljava/util/Set;

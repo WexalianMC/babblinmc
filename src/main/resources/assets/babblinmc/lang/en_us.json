@@ -15,5 +15,7 @@
   "block.babblinmc.ender_tank" : "Ender Tank",
   "block.babblinmc.ender_tank.disabled": "Ender tank is disabled",
   "block.babblinmc.ender_tank.empty": "Empty",
-  "block.babblinmc.ender_tank.fluid": "Fluid: %s, %d mB"
+  "block.babblinmc.ender_tank.fluid": "Fluid: %s, %d mB",
+  
+  "effect.babblinmc.flight": "Flight"
 }

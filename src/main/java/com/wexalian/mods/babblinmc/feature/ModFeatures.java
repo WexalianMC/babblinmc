@@ -29,7 +29,7 @@ public final class ModFeatures {
     
     public static final WeatherSleepModFeature WEATHER_SLEEP = ModFeatures.register("weather_sleep", WeatherSleepModFeature::new);
     
-    
+    public static final BeaconFlightModFeature BEACON_FLIGHT = ModFeatures.register("beacon_flight", BeaconFlightModFeature::new);
     
     public static void setup() {}
     

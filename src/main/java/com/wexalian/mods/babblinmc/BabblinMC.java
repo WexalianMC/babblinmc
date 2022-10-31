@@ -6,6 +6,7 @@ import com.wexalian.mods.babblinmc.config.ModConfig;
 import com.wexalian.mods.babblinmc.feature.ModFeatures;
 import com.wexalian.mods.babblinmc.init.BabblinMCBlockEntities;
 import com.wexalian.mods.babblinmc.init.BabblinMCBlocks;
+import com.wexalian.mods.babblinmc.init.BabblinMCEffects;
 import com.wexalian.mods.babblinmc.init.BabblinMCItems;
 import com.wexalian.nullability.annotations.Nonnull;
 import net.fabricmc.api.ModInitializer;
@@ -40,6 +41,7 @@ public class BabblinMC implements ModInitializer {
         BabblinMCBlocks.register();
         BabblinMCBlockEntities.register();
         BabblinMCItems.register();
+        BabblinMCEffects.register();
         
         ModFeatures.setup();
         ModConfig.instance().load(CONFIG_PATH);
