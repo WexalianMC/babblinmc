@@ -22,10 +22,12 @@ public final class ModFeatures {
     public static final BlockBreakerModFeature BLOCK_BREAKER_DISPENSER = ModFeatures.register("dispenser#block_breaker", BlockBreakerModFeature::new);
     
     public static final DoubleDoorModFeature DOUBLE_DOORS = ModFeatures.register("double_doors", DoubleDoorModFeature::new);
-    public static final ExtraCompostableModFeature EXTRA_COMPOSTABLES = ModFeatures.register("extra_compostables", ExtraCompostableModFeature::new);
     
+    public static final ExtraCompostableModFeature EXTRA_COMPOSTABLES = ModFeatures.register("extra_compostables", ExtraCompostableModFeature::new);
     public static final ShearBambooModFeature SHEAR_BAMBOO = ModFeatures.register("shear_bamboo", ShearBambooModFeature::new);
     public static final PassableLeavesModFeature PASSABLE_LEAVES = ModFeatures.register("passable_leaves", PassableLeavesModFeature::new);
+    
+    public static final WeatherSleepModFeature WEATHER_SLEEP = ModFeatures.register("weather_sleep", WeatherSleepModFeature::new);
     
     
     
