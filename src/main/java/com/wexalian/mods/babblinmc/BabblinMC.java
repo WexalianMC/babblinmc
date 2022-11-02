@@ -26,9 +26,9 @@ import org.apache.logging.log4j.Logger;
 import java.nio.file.Path;
 
 public class BabblinMC implements ModInitializer {
-    public static final Logger LOGGER = LogManager.getLogger();
-    
     public static final String MOD_ID = "babblinmc";
+    
+    public static final Logger LOGGER = LogManager.getLogger();
     
     public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID + ".json");
     

@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SnowBlock.class)
 public class SnowBlockMixin {
     
-    @Inject(at = @At("HEAD"), method = "canPlaceAt", cancellable = true)
+    @Inject(method = "canPlaceAt", at = @At("HEAD"), cancellable = true)
     public void canPlaceSnowLayerAt(BlockState state, WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         if (ModFeatures.PASSABLE_LEAVES.canPlaceSnowLayerAt(state)) {
             cir.setReturnValue(true);
