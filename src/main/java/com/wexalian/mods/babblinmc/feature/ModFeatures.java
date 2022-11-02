@@ -8,6 +8,10 @@ import com.wexalian.mods.babblinmc.feature.impl.*;
 import com.wexalian.mods.babblinmc.feature.impl.block.EnderTankModFeature;
 import com.wexalian.mods.babblinmc.feature.impl.block.PumpModFeature;
 import com.wexalian.nullability.annotations.Nonnull;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -68,9 +72,22 @@ public final class ModFeatures {
             else disabled.add(feature);
         }
         
-        BabblinMC.LOGGER.info("Loaded {} mod features: ", MOD_FEATURES.size());
+        BabblinMC.LOGGER.info("Running with {} mod features: ", MOD_FEATURES.size());
         BabblinMC.LOGGER.info("    Enabled: {} [{}]", enabled.size(), StringUtil.join(enabled, ", ", ModFeature::getId));
         BabblinMC.LOGGER.info("    Disabled: {} [{}]", disabled.size(), StringUtil.join(disabled, ", ", ModFeature::getId));
+    }
+    
+    
+    public static void updateClient(ServerPlayerEntity player) {
+        PacketByteBuf byteBuf = PacketByteBufs.create();
+        byteBuf.writeInt(MOD_FEATURES.size());
+        
+        MOD_FEATURES.forEach((id, feature) -> {
+            byteBuf.writeString(id);
+            feature.write(byteBuf);
+        });
+        
+        ServerPlayNetworking.send(player, BabblinMC.MOD_FEATURES_SYNC, byteBuf);
     }
     
     public static Collection<ModFeature> getModFeatures() {

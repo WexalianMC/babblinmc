@@ -37,6 +37,7 @@ public class BabblinMC implements ModInitializer {
                                                                 .build();
     
     public static final Identifier MOD_FEATURE_SYNC = new Identifier(MOD_ID, "mod_feature_sync");
+    public static final Identifier MOD_FEATURES_SYNC = new Identifier(MOD_ID, "mod_features_sync");
     
     @Override
     public void onInitialize() {

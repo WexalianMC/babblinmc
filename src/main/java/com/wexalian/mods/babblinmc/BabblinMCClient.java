@@ -34,10 +34,22 @@ public class BabblinMCClient implements ClientModInitializer {
                                                                                                  EnderTankBlock.FlowDirection.NONE).ordinal() / 2F);
         
         ClientPlayNetworking.registerGlobalReceiver(BabblinMC.MOD_FEATURE_SYNC, (client, handler, buf, responseSender) -> {
-            String id = buf.readString();
             buf.retain();
             client.execute(() -> {
+                String id = buf.readString();
                 ModFeatures.getModFeature(id).read(buf);
+                buf.release();
+            });
+        });
+        
+        ClientPlayNetworking.registerGlobalReceiver(BabblinMC.MOD_FEATURES_SYNC, (client, handler, buf, responseSender) -> {
+            buf.retain();
+            client.execute(() -> {
+                int count = buf.readInt();
+                for (int i = 0; i < count; i++) {
+                    String id = buf.readString();
+                    ModFeatures.getModFeature(id).read(buf);
+                }
                 buf.release();
             });
         });

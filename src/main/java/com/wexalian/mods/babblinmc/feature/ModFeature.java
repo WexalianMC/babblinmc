@@ -262,18 +262,10 @@ public abstract class ModFeature {
         PacketByteBuf byteBuf = PacketByteBufs.create();
         byteBuf.writeString(getId());
         write(byteBuf);
-        
+    
         for (ServerPlayerEntity player : PlayerLookup.all(server)) {
             ServerPlayNetworking.send(player, BabblinMC.MOD_FEATURE_SYNC, byteBuf);
         }
-    }
-    
-    public void updateClient(ServerPlayerEntity player) {
-        PacketByteBuf byteBuf = PacketByteBufs.create();
-        byteBuf.writeString(getId());
-        write(byteBuf);
-        
-        ServerPlayNetworking.send(player, BabblinMC.MOD_FEATURE_SYNC, byteBuf);
     }
     
     protected void write(PacketByteBuf byteBuf) {
