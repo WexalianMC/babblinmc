@@ -1,5 +1,6 @@
 package com.wexalian.mods.babblinmc.feature.impl;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.wexalian.config.ConfigHandler;
 import com.wexalian.config.ConfigProperty;
 import com.wexalian.mods.babblinmc.feature.ModFeature;
@@ -8,6 +9,7 @@ import com.wexalian.nullability.annotations.Nonnull;
 import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketByteBuf;
 
@@ -44,6 +46,12 @@ public class BeaconFlightModFeature extends ModFeature {
     private void removeFlightEffect() {
         BeaconBlockEntity.EFFECTS_BY_LEVEL[3] = new StatusEffect[]{StatusEffects.REGENERATION};
         BeaconBlockEntity.EFFECTS = Arrays.stream(BeaconBlockEntity.EFFECTS_BY_LEVEL).flatMap(Arrays::stream).collect(Collectors.toSet());
+    }
+    
+    @Override
+    public void registerSubCommands(LiteralArgumentBuilder<ServerCommandSource> root) {
+        super.registerSubCommands(root);
+        registerIntSubCommand(root, "level_required", levelRequired);
     }
     
     public boolean canFly(PlayerEntity player) {
