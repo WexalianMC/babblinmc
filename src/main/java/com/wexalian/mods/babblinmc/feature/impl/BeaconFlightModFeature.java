@@ -9,6 +9,7 @@ import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.PacketByteBuf;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -47,5 +48,17 @@ public class BeaconFlightModFeature extends ModFeature {
     
     public boolean canFly(PlayerEntity player) {
         return isEnabled() && player.experienceLevel >= levelRequired.get();
+    }
+    
+    @Override
+    protected void write(PacketByteBuf byteBuf) {
+        super.write(byteBuf);
+        byteBuf.writeInt(levelRequired.get());
+    }
+    
+    @Override
+    public void read(PacketByteBuf byteBuf) {
+        super.read(byteBuf);
+        levelRequired.set(byteBuf.readInt());
     }
 }

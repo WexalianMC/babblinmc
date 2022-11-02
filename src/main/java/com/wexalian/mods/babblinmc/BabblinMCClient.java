@@ -1,10 +1,12 @@
 package com.wexalian.mods.babblinmc;
 
 import com.wexalian.mods.babblinmc.block.EnderTankBlock;
+import com.wexalian.mods.babblinmc.feature.ModFeatures;
 import com.wexalian.mods.babblinmc.init.BabblinMCBlocks;
 import com.wexalian.mods.babblinmc.item.EnderTankBlockItem;
 import com.wexalian.nullability.annotations.Nonnull;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.BlockItem;
@@ -30,6 +32,15 @@ public class BabblinMCClient implements ClientModInitializer {
                                                 (stack, world, entity, seed) -> (float) getValue(stack,
                                                                                                  EnderTankBlock.FLOW,
                                                                                                  EnderTankBlock.FlowDirection.NONE).ordinal() / 2F);
+        
+        ClientPlayNetworking.registerGlobalReceiver(BabblinMC.MOD_FEATURE_SYNC, (client, handler, buf, responseSender) -> {
+            String id = buf.readString();
+            buf.retain();
+            client.execute(() -> {
+                ModFeatures.getModFeature(id).read(buf);
+                buf.release();
+            });
+        });
     }
     
     @Nonnull

@@ -36,6 +36,8 @@ public class BabblinMC implements ModInitializer {
                                                                 .icon(() -> new ItemStack(Items.STICK))
                                                                 .build();
     
+    public static final Identifier MOD_FEATURE_SYNC = new Identifier(MOD_ID, "mod_feature_sync");
+    
     @Override
     public void onInitialize() {
         BabblinMCBlocks.register();

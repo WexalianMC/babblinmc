@@ -12,8 +12,15 @@ import com.wexalian.config.ConfigHandler;
 import com.wexalian.config.ConfigProperty;
 import com.wexalian.config.ListConfigProperty;
 import com.wexalian.config.MapConfigProperty;
+import com.wexalian.mods.babblinmc.BabblinMC;
 import com.wexalian.nullability.annotations.Nonnull;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 import java.util.function.BiFunction;
@@ -99,6 +106,7 @@ public abstract class ModFeature {
                 property.set(value);
                 String text = StringUtil.format("Set {}/{} to {}", id, name, value);
                 context.getSource().sendFeedback(Text.of(text), false);
+                updateClients(context.getSource().getServer());
                 return 1;
             }
             throw VALUE_ALREADY_EQUALS.create(id, name, value);
@@ -128,6 +136,7 @@ public abstract class ModFeature {
                     property.add(value);
                     String text = StringUtil.format("Added {} to {}/{}", value, id, name);
                     context.getSource().sendFeedback(Text.of(text), false);
+                    updateClients(context.getSource().getServer());
                     return 1;
                 }
                 throw LIST_VALUE_ALREADY_EXISTS.create(id, name, value);
@@ -137,9 +146,10 @@ public abstract class ModFeature {
             T value = valueFunction.apply(context, name + "ValueRemove");
             if (value != null) {
                 if (property.contains(value)) {
-                    if(property.remove(value)){
+                    if (property.remove(value)) {
                         String text = StringUtil.format("Removed {} from {}/{}", value, id, name);
                         context.getSource().sendFeedback(Text.of(text), false);
+                        updateClients(context.getSource().getServer());
                         return 1;
                     }
                 }
@@ -155,6 +165,7 @@ public abstract class ModFeature {
                     context.getSource().sendFeedback(Text.of(text2), false);
                 }
                 property.clear();
+                updateClients(context.getSource().getServer());
                 return 1;
             }
             throw PROPERTY_EMPTY.create(id, name);
@@ -204,6 +215,7 @@ public abstract class ModFeature {
                         else text = StringUtil.format("Added {} to {}/{} with value {}", key, id, name, value);
                         
                         context.getSource().sendFeedback(Text.of(text), false);
+                        updateClients(context.getSource().getServer());
                         return 1;
                     }
                     throw MAP_VALUE_ALREADY_EXISTS.create(id, name, key, value);
@@ -218,6 +230,7 @@ public abstract class ModFeature {
                 if (value != null) {
                     String text = StringUtil.format("Removed {} from {}/{} with value {}", key, id, name, value);
                     context.getSource().sendFeedback(Text.of(text), false);
+                    updateClients(context.getSource().getServer());
                     return 1;
                 }
                 throw MAP_VALUE_DOESNT_CONTAIN.create(id, name, key);
@@ -232,6 +245,7 @@ public abstract class ModFeature {
                     context.getSource().sendFeedback(Text.of(text2), false);
                 }
                 property.clear();
+                updateClients(context.getSource().getServer());
                 return 1;
             }
             throw PROPERTY_EMPTY.create(id, name);
@@ -243,4 +257,31 @@ public abstract class ModFeature {
         ADD,
         REMOVE;
     }
+    
+    private void updateClients(MinecraftServer server) {
+        PacketByteBuf byteBuf = PacketByteBufs.create();
+        byteBuf.writeString(getId());
+        write(byteBuf);
+        
+        for (ServerPlayerEntity player : PlayerLookup.all(server)) {
+            ServerPlayNetworking.send(player, BabblinMC.MOD_FEATURE_SYNC, byteBuf);
+        }
+    }
+    
+    public void updateClient(ServerPlayerEntity player) {
+        PacketByteBuf byteBuf = PacketByteBufs.create();
+        byteBuf.writeString(getId());
+        write(byteBuf);
+        
+        ServerPlayNetworking.send(player, BabblinMC.MOD_FEATURE_SYNC, byteBuf);
+    }
+    
+    protected void write(PacketByteBuf byteBuf) {
+        byteBuf.writeBoolean(enabled.get());
+    }
+    
+    public void read(PacketByteBuf byteBuf) {
+        enabled.set(byteBuf.readBoolean());
+    }
+    
 }
