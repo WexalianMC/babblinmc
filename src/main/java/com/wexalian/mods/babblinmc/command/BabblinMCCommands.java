@@ -6,6 +6,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.wexalian.common.util.StringUtil;
 import com.wexalian.mods.babblinmc.BabblinMC;
 import com.wexalian.mods.babblinmc.command.argument.ItemArgumentType;
+import com.wexalian.mods.babblinmc.command.argument.PermittedFloatArgumentType;
 import com.wexalian.mods.babblinmc.feature.ModFeature;
 import com.wexalian.mods.babblinmc.feature.ModFeatures;
 import net.minecraft.command.argument.ArgumentTypes;
@@ -22,6 +23,7 @@ public class BabblinMCCommands {
     
     public void registerArguments() {
         ArgumentTypes.register(BabblinMC.MOD_ID + ":item", ItemArgumentType.class, new ConstantArgumentSerializer<>(ItemArgumentType::all));
+        ArgumentTypes.register(BabblinMC.MOD_ID + ":permitted_float", PermittedFloatArgumentType.class, new ConstantArgumentSerializer<>(PermittedFloatArgumentType::permitted));
     }
     
     public void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated) {
